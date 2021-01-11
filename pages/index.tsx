@@ -1,39 +1,35 @@
 import React from 'react'
 import Link from 'next/link'
 import { GetStaticProps, NextPage } from 'next'
+import { Articles } from '../types'
 
 type Props = {
-  blogs: [
-    {
-      id: string
-      title: string
-    },
-  ]
+  articles: Articles
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const res = await fetch('https://tac.microcms.io/api/v1/blogs', {
+  const res = await fetch('https://tac.microcms.io/api/v1/articles', {
     headers: {
-      'X-API-KEY': process.env.API_KEY,
+      'X-API-KEY': process.env.API_KEY || '',
     },
   })
-  const data = await res.json()
+  const articles = await res.json()
 
   return {
     props: {
-      blogs: data.contents,
+      articles,
     },
   }
 }
 
-const Blogs: NextPage<Props> = ({ blogs }) => {
+const ArticlesPage: NextPage<Props> = ({ articles }) => {
   return (
     <div>
-      {blogs.map((blog) => (
-        <ul key={blog.id}>
+      {articles.contents.map((article) => (
+        <ul key={article.id}>
           <li>
-            <Link href={`blogs/${blog.id}`}>
-              <a>{blog.title}</a>
+            <Link href={`articles/${article.id}`}>
+              <a>{article.title}</a>
             </Link>
           </li>
         </ul>
@@ -42,4 +38,4 @@ const Blogs: NextPage<Props> = ({ blogs }) => {
   )
 }
 
-export default Blogs
+export default ArticlesPage
