@@ -1,7 +1,8 @@
 import React from 'react'
-import Link from 'next/link'
 import { GetStaticProps, NextPage } from 'next'
 import { Articles } from '../types'
+import { Layout } from '../src/components/organisms/common/Layout'
+import { ArticleList } from '../src/components/organisms/articles/ArticleList'
 
 type Props = {
   articles: Articles
@@ -22,20 +23,10 @@ export const getStaticProps: GetStaticProps = async () => {
   }
 }
 
-const ArticlesPage: NextPage<Props> = ({ articles }) => {
-  return (
-    <div>
-      {articles.contents.map((article) => (
-        <ul key={article.id}>
-          <li>
-            <Link href={`articles/${article.id}`}>
-              <a>{article.title}</a>
-            </Link>
-          </li>
-        </ul>
-      ))}
-    </div>
-  )
-}
+const ArticlesPage: NextPage<Props> = ({ articles }) => (
+  <Layout>
+    <ArticleList articles={articles} />
+  </Layout>
+)
 
 export default ArticlesPage

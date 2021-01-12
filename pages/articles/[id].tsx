@@ -6,6 +6,8 @@ import {
   NextPage,
 } from 'next'
 import { Article } from '../../types'
+import { ArticleDetail } from '../../src/components/organisms/articles/ArticleDetail'
+import { Layout } from '../../src/components/organisms/common/Layout'
 
 type Props = {
   article: Article
@@ -48,14 +50,10 @@ export const getStaticProps: GetStaticProps = async (
   }
 }
 
-const ArticlePage: NextPage<Props> = ({ article }) => {
-  return (
-    <div
-      dangerouslySetInnerHTML={{
-        __html: `${article.body}`,
-      }}
-    />
-  )
-}
+const ArticlePage: NextPage<Props> = ({ article }) => (
+  <Layout>
+    <ArticleDetail article={article} />
+  </Layout>
+)
 
 export default ArticlePage
