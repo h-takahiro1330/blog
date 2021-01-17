@@ -8,8 +8,8 @@ type Props = {
 }
 
 export const ArticleList: FC<Props> = ({ articles }) => (
-  <section className="container mx-auto px-20 py-12">
-    <ul className="grid grid-cols-3 gap-8">
+  <section>
+    <ul className="grid grid-cols-list gap-8 w-10/12 mx-auto">
       {articles.contents.map((article) => (
         <li key={article.id}>
           <Link href={`articles/${article.id}`}>
