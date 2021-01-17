@@ -8,7 +8,7 @@ type Props = {
 }
 
 export const ArticleDetail: FC<Props> = ({ article }) => (
-  <section className="bg-white w-full max-w-screen-md mx-auto shadow-sm md:my-8 md:p-8 p-4">
+  <section className="bg-white w-full max-w-screen-md mx-auto shadow-sm md:p-8 p-4">
     <h1 className="font-bold text-2xl mb-4">{article.title}</h1>
     <span className="block text-gray-500 text-right mb-12">
       {dayjs(article.revisedAt).format('YYYY/MM/DD')}

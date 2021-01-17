@@ -3,9 +3,9 @@ import { Footer } from './Footer'
 import { Header } from './Header'
 
 export const Layout: FC = ({ children }) => (
-  <main className="bg-gray-100 min-h-screen grid grid-rows-layout">
+  <>
     <Header />
-    {children}
+    <main className="bg-gray-100 min-h-layout py-10">{children}</main>
     <Footer />
-  </main>
+  </>
 )

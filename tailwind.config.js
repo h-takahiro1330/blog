@@ -1,13 +1,20 @@
+const HEADER_HEIGHT = 64
+const FOOTER_HEIGHT = 64
+
 module.exports = {
   purge: ['./pages/**/*.tsx', './src/components/**/*.tsx'],
   darkMode: false,
   theme: {
     extend: {
-      gridTemplateRows: {
-        layout: '64px 1fr 56px',
+      minHeight: {
+        layout: `calc(100vh - ${HEADER_HEIGHT + FOOTER_HEIGHT}px)`,
       },
       gridTemplateColumns: {
         list: 'repeat(auto-fit, minmax(280px, 1fr))',
+      },
+      height: {
+        header: `${HEADER_HEIGHT}px`,
+        footer: `${FOOTER_HEIGHT}px`,
       },
     },
   },
