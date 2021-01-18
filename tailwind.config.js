@@ -16,6 +16,9 @@ module.exports = {
         header: `${HEADER_HEIGHT}px`,
         footer: `${FOOTER_HEIGHT}px`,
       },
+      padding: {
+        'mv-aspect-ratio': '66.7%',
+      },
     },
   },
   variants: {

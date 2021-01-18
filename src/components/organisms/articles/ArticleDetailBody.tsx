@@ -15,7 +15,7 @@ export const ArticleDetailBody: FC<Props> = ({ articleHtml }) => (
     <style jsx global>{`
       .body {
         h2 {
-          @apply font-bold text-lg p-4 bg-gray-100 border-l-8 my-6;
+          @apply font-bold text-lg p-4 bg-gray-100 border-l-8 mt-12 mb-6;
         }
         p {
           @apply my-6;
