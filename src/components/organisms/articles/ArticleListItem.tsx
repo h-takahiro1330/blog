@@ -7,10 +7,10 @@ type Props = {
 }
 
 export const ArticleListItem: FC<Props> = ({ article }) => (
-  <section className="border h-80 bg-white shadow-sm hover:opacity-80 hover:bg-gray-50">
+  <section className="border h-80 bg-white shadow-sm max-w-md mx-auto rounded-lg hover:opacity-80 hover:bg-gray-50">
     {article.mainVisual ? (
       <img
-        className="h-2/3 w-full object-cover"
+        className="h-2/3 w-full object-cover rounded-t-lg"
         src={article.mainVisual ? article.mainVisual.url : ''}
         alt="記事のメインビジュアル"
       />

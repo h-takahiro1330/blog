@@ -11,7 +11,7 @@ export const ArticleList: FC<Props> = ({ articles }) => (
   <ul className="grid grid-cols-list gap-8 w-10/12 mx-auto">
     {articles.contents.map((article) => (
       <li key={article.id}>
-        <Link href={`articles/${article.id}`}>
+        <Link href={`/articles/${article.id}`}>
           <a>
             <ArticleListItem article={article} />
           </a>
