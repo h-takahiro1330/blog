@@ -5,7 +5,6 @@ import {
   GetStaticPropsContext,
   NextPage,
 } from 'next'
-import { Article } from '../../types'
 import { ArticleDetail } from '~/components/organisms/articles/ArticleDetail'
 import { Layout } from '~/components/organisms/common/Layout'
 

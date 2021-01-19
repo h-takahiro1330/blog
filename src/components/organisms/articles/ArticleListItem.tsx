@@ -1,6 +1,5 @@
 import dayjs from 'dayjs'
 import React, { FC } from 'react'
-import { Article } from '../../../../types'
 
 type Props = {
   article: Article

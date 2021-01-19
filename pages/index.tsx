@@ -1,6 +1,5 @@
 import React from 'react'
 import { GetStaticProps, NextPage } from 'next'
-import { Articles } from '../types'
 import { Layout } from '~/components/organisms/common/Layout'
 import { ArticleList } from '~/components/organisms/articles/ArticleList'
 

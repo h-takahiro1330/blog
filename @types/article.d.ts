@@ -1,4 +1,4 @@
-export type Article = {
+type Article = {
   id: string
   createdAt: string
   updatedAt: string
@@ -11,7 +11,7 @@ export type Article = {
   }
 }
 
-export type Articles = {
+type Articles = {
   contents: Article[]
   totalCount: number
   offset: number
