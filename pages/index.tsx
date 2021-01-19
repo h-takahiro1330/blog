@@ -1,8 +1,8 @@
 import React from 'react'
 import { GetStaticProps, NextPage } from 'next'
 import { Articles } from '../types'
-import { Layout } from '../src/components/organisms/common/Layout'
-import { ArticleList } from '../src/components/organisms/articles/ArticleList'
+import { Layout } from '~/components/organisms/common/Layout'
+import { ArticleList } from '~/components/organisms/articles/ArticleList'
 
 type Props = {
   articles: Articles

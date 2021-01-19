@@ -6,8 +6,8 @@ import {
   NextPage,
 } from 'next'
 import { Article } from '../../types'
-import { ArticleDetail } from '../../src/components/organisms/articles/ArticleDetail'
-import { Layout } from '../../src/components/organisms/common/Layout'
+import { ArticleDetail } from '~/components/organisms/articles/ArticleDetail'
+import { Layout } from '~/components/organisms/common/Layout'
 
 type Props = {
   article: Article
