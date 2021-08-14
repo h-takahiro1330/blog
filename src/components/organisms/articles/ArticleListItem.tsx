@@ -1,5 +1,5 @@
 import dayjs from 'dayjs'
-import React, { FC } from 'react'
+import { FC } from 'react'
 
 type Props = {
   article: Article

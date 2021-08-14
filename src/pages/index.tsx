@@ -1,5 +1,5 @@
 import { GetStaticProps, NextPage } from 'next'
-import { ArticleList } from '~/components/organisms/articles/ArticleList'
+import { ArticleListTemplate } from '~/components/templates/articles/ArticleList'
 
 type Props = {
   articles: Articles
@@ -21,7 +21,7 @@ export const getStaticProps: GetStaticProps = async () => {
 }
 
 const ArticlesPage: NextPage<Props> = ({ articles }) => (
-  <ArticleList articles={articles} />
+  <ArticleListTemplate articles={articles} />
 )
 
 export default ArticlesPage

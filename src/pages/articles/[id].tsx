@@ -4,7 +4,7 @@ import {
   GetStaticPropsContext,
   NextPage,
 } from 'next'
-import { ArticleDetail } from '~/components/organisms/articles/ArticleDetail'
+import { ArticleDetailTemplate } from '~/components/templates/articles/ArticleDetail'
 
 type Props = {
   article: Article
@@ -48,7 +48,7 @@ export const getStaticProps: GetStaticProps = async (
 }
 
 const ArticlePage: NextPage<Props> = ({ article }) => (
-  <ArticleDetail article={article} />
+  <ArticleDetailTemplate article={article} />
 )
 
 export default ArticlePage
