@@ -1,6 +1,4 @@
-import React from 'react'
 import { GetStaticProps, NextPage } from 'next'
-import { Layout } from '~/components/organisms/common/Layout'
 import { ArticleList } from '~/components/organisms/articles/ArticleList'
 
 type Props = {
@@ -23,9 +21,7 @@ export const getStaticProps: GetStaticProps = async () => {
 }
 
 const ArticlesPage: NextPage<Props> = ({ articles }) => (
-  <Layout>
-    <ArticleList articles={articles} />
-  </Layout>
+  <ArticleList articles={articles} />
 )
 
 export default ArticlesPage

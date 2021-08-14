@@ -1,4 +1,3 @@
-import React from 'react'
 import {
   GetStaticPaths,
   GetStaticProps,
@@ -6,7 +5,6 @@ import {
   NextPage,
 } from 'next'
 import { ArticleDetail } from '~/components/organisms/articles/ArticleDetail'
-import { Layout } from '~/components/organisms/common/Layout'
 
 type Props = {
   article: Article
@@ -50,9 +48,7 @@ export const getStaticProps: GetStaticProps = async (
 }
 
 const ArticlePage: NextPage<Props> = ({ article }) => (
-  <Layout>
-    <ArticleDetail article={article} />
-  </Layout>
+  <ArticleDetail article={article} />
 )
 
 export default ArticlePage
