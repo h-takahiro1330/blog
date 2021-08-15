@@ -1,6 +1,6 @@
 import { FC } from 'react'
-import { Footer } from './Footer'
-import { Header } from './Header'
+import { Footer } from '~/components/organisms/common/Footer'
+import { Header } from '~/components/organisms/common/Header'
 
 export const Layout: FC = ({ children }) => (
   <>
