@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "lint": "eslint . --ext .js,.ts,.tsx",
+    "type-check": "tsc --noEmit"
   },
   "dependencies": {
     "dayjs": "^1.10.3",
