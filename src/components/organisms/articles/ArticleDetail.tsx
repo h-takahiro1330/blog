@@ -1,5 +1,6 @@
 import dayjs from 'dayjs'
 import { FC } from 'react'
+import Image from 'next/image'
 import { ArticleDetailBody } from '~/components/organisms/articles/ArticleDetailBody'
 import { Paper } from '~/components/atoms/Paper'
 
@@ -17,10 +18,13 @@ export const ArticleDetail: FC<Props> = ({ article }) => (
         </span>
         {article.mainVisual && (
           <div className="relative pt-mv-aspect-ratio">
-            <img
+            <Image
+              className="absolute inset-0 w-full h-full object-cover"
+              layout="fill"
+              placeholder="blur"
+              blurDataURL={article.mainVisual.url}
               src={article.mainVisual.url}
               alt="記事のメインビジュアル"
-              className="absolute inset-0 w-full h-full object-cover"
             />
           </div>
         )}
