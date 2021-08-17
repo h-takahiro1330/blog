@@ -9,14 +9,14 @@ type Props = {
 
 export const ArticleListItem: FC<Props> = ({ article }) => (
   <Paper>
-    <section className="h-80 max-w-md mx-auto hover:opacity-80 hover:bg-gray-50">
+    <section className="h-80 mx-auto hover:opacity-80 hover:bg-gray-50">
       <div className="relative h-2/3 w-full">
         {article.mainVisual?.url ? (
           <Image
+            className="object-cover rounded-t-lg"
+            layout="fill"
             placeholder="blur"
             blurDataURL={article.mainVisual.url}
-            layout="fill"
-            className="object-cover rounded-t-lg"
             src={article.mainVisual.url}
             alt="記事のメインビジュアル"
           />
