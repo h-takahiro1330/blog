@@ -6,7 +6,7 @@ type Props = {
 
 export const ArticleDetailBody: FC<Props> = ({ articleHtml }) => (
   <>
-    <section
+    <article
       className="body"
       dangerouslySetInnerHTML={{
         __html: `${articleHtml}`,

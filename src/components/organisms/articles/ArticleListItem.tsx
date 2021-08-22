@@ -9,7 +9,7 @@ type Props = {
 
 export const ArticleListItem: FC<Props> = ({ article }) => (
   <Paper>
-    <section className="h-80 mx-auto hover:opacity-80 hover:bg-gray-50">
+    <article className="h-80 mx-auto hover:opacity-80 hover:bg-gray-50">
       <div className="relative h-2/3 w-full">
         {article.mainVisual?.url ? (
           <Image
@@ -30,6 +30,6 @@ export const ArticleListItem: FC<Props> = ({ article }) => (
           {dayjs(article.revisedAt).format('YYYY/MM/DD')}
         </span>
       </div>
-    </section>
+    </article>
   </Paper>
 )
