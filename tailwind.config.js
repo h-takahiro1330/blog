@@ -2,8 +2,11 @@ const HEADER_HEIGHT = 64
 const FOOTER_HEIGHT = 64
 
 module.exports = {
-  purge: ['./pages/**/*.tsx', './src/components/**/*.tsx'],
-  darkMode: false,
+  content: [
+    './pages/**/*.tsx',
+    './src/components/**/*.tsx',
+    './src/features/**/*.tsx',
+  ],
   theme: {
     extend: {
       minHeight: {
