@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { FC } from 'react'
-import { ArticleListItem } from '~/components/organisms/articles/ArticleListItem'
+import { ArticleListItem } from '~/features/articles/ArticleListItem'
 
 type Props = {
   articles: Articles

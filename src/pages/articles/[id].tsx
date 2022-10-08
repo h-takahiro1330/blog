@@ -5,7 +5,8 @@ import {
   NextPage,
 } from 'next'
 import Head from 'next/head'
-import { ArticleDetailTemplate } from '~/components/templates/articles/ArticleDetail'
+import { ArticleDetail } from '~/features/articles/ArticleDetail'
+import { Layout } from '~/components/Layout'
 
 type Props = {
   article: Article
@@ -53,7 +54,9 @@ const ArticlePage: NextPage<Props> = ({ article }) => (
     <Head>
       <title>{article.title}</title>
     </Head>
-    <ArticleDetailTemplate article={article} />
+    <Layout>
+      <ArticleDetail article={article} />
+    </Layout>
   </>
 )
 

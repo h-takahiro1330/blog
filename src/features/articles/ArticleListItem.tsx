@@ -1,6 +1,6 @@
 import dayjs from 'dayjs'
 import { FC } from 'react'
-import { Paper } from '~/components/atoms/Paper'
+import { Paper } from '~/components/Paper'
 import Image from 'next/image'
 
 type Props = {

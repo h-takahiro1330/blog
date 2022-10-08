@@ -1,7 +1,8 @@
 import Head from 'next/head'
 import { GetStaticProps, NextPage } from 'next'
-import { ArticleListTemplate } from '~/components/templates/articles/ArticleList'
-import { BLOG_TITLE } from '~/components/organisms/common/Header'
+import { Layout } from '~/components/Layout'
+import { ArticleList } from '~/features/articles/ArticleList'
+import { BLOG_TITLE } from '~/components/Header'
 
 type Props = {
   articles: Articles
@@ -27,7 +28,9 @@ const ArticlesPage: NextPage<Props> = ({ articles }) => (
     <Head>
       <title>{BLOG_TITLE}</title>
     </Head>
-    <ArticleListTemplate articles={articles} />
+    <Layout>
+      <ArticleList articles={articles} />
+    </Layout>
   </>
 )
 
