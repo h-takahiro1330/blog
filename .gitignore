@@ -33,4 +33,6 @@ yarn-error.log*
 # vercel
 .vercel
 
+# others
 *.tsbuildinfo
+build-storybook.log
