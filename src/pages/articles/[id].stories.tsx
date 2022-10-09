@@ -1,5 +1,5 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
-import ArticlePage from '~/pages/articles/[id]'
+import ArticlePage from '~/pages/articles/[id].page'
 
 export default {
   title: 'pages/articles/[id]',
