@@ -1,13 +1,13 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
-import { ArticleList } from '~/features/articles/ArticleList'
+import ArticlesPage from '~/pages'
 
 export default {
-  title: 'features/articles/ArticleList',
-  component: ArticleList,
-} as ComponentMeta<typeof ArticleList>
+  title: 'pages/index',
+  component: ArticlesPage,
+} as ComponentMeta<typeof ArticlesPage>
 
-const Template: ComponentStory<typeof ArticleList> = (args) => (
-  <ArticleList {...args} />
+const Template: ComponentStory<typeof ArticlesPage> = (args) => (
+  <ArticlesPage {...args} />
 )
 
 export const Default = Template.bind({})
