@@ -18,7 +18,6 @@ export const ArticleDetailHead: FC = () => {
       ? `https://tac.microcms.io/api/v1/articles/${router.query.id}`
       : null,
     fetcher,
-    { suspense: true },
   )
 
   if (error) {

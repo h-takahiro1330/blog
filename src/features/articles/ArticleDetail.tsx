@@ -16,7 +16,6 @@ const fetcher = async (url: string) => {
 
 export const ArticleDetail: FC = () => {
   const router = useRouter()
-  console.log(router.query.id)
   const { data, error } = useSWR<Article>(
     router.query.id
       ? `https://tac.microcms.io/api/v1/articles/${router.query.id}`
