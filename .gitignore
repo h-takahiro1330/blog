@@ -36,3 +36,4 @@ yarn-error.log*
 # others
 *.tsbuildinfo
 build-storybook.log
+storybook-static
