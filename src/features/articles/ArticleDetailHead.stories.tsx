@@ -1,14 +1,14 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
-import ArticlePage from '~/pages/articles/[id].page'
+import { ArticleDetailHead } from '~/features/articles/ArticleDetailHead'
 import { rest } from 'msw'
 
 export default {
-  title: 'pages/articles/[id]',
-  component: ArticlePage,
-} as ComponentMeta<typeof ArticlePage>
+  title: 'features/articles/ArticleDetailHead',
+  component: ArticleDetailHead,
+} as ComponentMeta<typeof ArticleDetailHead>
 
-const Template: ComponentStory<typeof ArticlePage> = (args) => (
-  <ArticlePage {...args} />
+const Template: ComponentStory<typeof ArticleDetailHead> = (args) => (
+  <ArticleDetailHead {...args}>sample ArticleDetailHead</ArticleDetailHead>
 )
 
 export const SuccessBehavior = Template.bind({})
