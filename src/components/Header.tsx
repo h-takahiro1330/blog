@@ -1,12 +1,19 @@
 import Link from 'next/link'
-import { FC } from 'react'
+import { FC, useState } from 'react'
 
 export const BLOG_TITLE = "Camper's Blog"
 
-export const Header: FC = () => (
-  <header className="flex items-center px-8 border-b bg-white text-2xl font-extrabold shadow-sm h-header">
-    <Link href="/">
-      <a>{BLOG_TITLE}</a>
-    </Link>
-  </header>
-)
+export const Header: FC = () => {
+  const [isCamping, setIsCamping] = useState(true)
+
+  return (
+    <header className="flex items-center px-8 border-b bg-white text-2xl font-extrabold shadow-sm h-header">
+      <Link href="/">
+        <a>{BLOG_TITLE}</a>
+      </Link>
+      <button className="mx-2" onClick={() => setIsCamping(!isCamping)}>
+        {isCamping ? '🏕️' : '🗻'}
+      </button>
+    </header>
+  )
+}
