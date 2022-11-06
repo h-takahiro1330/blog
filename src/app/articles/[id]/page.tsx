@@ -1,14 +1,14 @@
 'use client'
 
 import { ArticleDetail } from '~/app/articles/[id]/ArticleDetail'
-import { Suspense } from 'react'
-import { NextPage } from 'next'
+import { FC, Suspense } from 'react'
 
 type Props = {
   params: { id: string }
 }
 
-const ArticlePage: NextPage<Props> = ({ params }: Props) => (
+// TODO: https://github.com/vercel/next.js/issues/41884
+const ArticlePage: FC<Props> = ({ params }: Props) => (
   <Suspense fallback={null}>
     <ArticleDetail {...params} />
   </Suspense>

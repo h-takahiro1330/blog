@@ -1,4 +1,5 @@
-module.exports = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   images: {
     domains: ['images.microcms-assets.io'],
   },
@@ -6,3 +7,5 @@ module.exports = {
     appDir: true,
   },
 }
+
+module.exports = nextConfig
