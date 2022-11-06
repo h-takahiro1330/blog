@@ -12,7 +12,7 @@ export const Header: FC = () => {
         <a>{BLOG_TITLE}</a>
       </Link>
       <button className="mx-2" onClick={() => setIsCamping(!isCamping)}>
-        {isCamping ? '🏕️' : '🗻'}
+        {isCamping ? '🏕️' : '🌋'}
       </button>
     </header>
   )

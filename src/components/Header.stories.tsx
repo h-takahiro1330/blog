@@ -17,7 +17,7 @@ export const Default = Template.bind({})
 Default.play = async () => {
   const submitButton = screen.getByRole('button')
   await userEvent.click(submitButton)
-  expect(submitButton.innerText).toBe('🗻')
+  expect(submitButton.innerText).toBe('🌋')
 
   await userEvent.click(submitButton)
   expect(submitButton.innerText).toBe('🏕️')
