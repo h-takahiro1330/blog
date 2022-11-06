@@ -1,8 +1,8 @@
-import { FC } from 'react'
+'use client'
+
 import axios from 'axios'
+import { FC } from 'react'
 import useSWR from 'swr'
-import { useRouter } from 'next/router'
-import Head from 'next/head'
 
 const fetcher = async (url: string) => {
   const res = await axios.get(url, {
@@ -11,15 +11,18 @@ const fetcher = async (url: string) => {
   return res.data
 }
 
-export const ArticleDetailHead: FC = () => {
-  const router = useRouter()
+type Props = {
+  params: { id: string }
+}
+
+const Head: FC<Props> = ({ params }: Props) => {
+  // TODO: fetch
   const { data, error } = useSWR<Article>(
-    router.query.id
-      ? `https://tac.microcms.io/api/v1/articles/${router.query.id}`
-      : null,
+    params.id ? `https://tac.microcms.io/api/v1/articles/${params.id}` : null,
     fetcher,
   )
 
+  // TODO: error
   if (error) {
     return <p>error</p>
   }
@@ -27,8 +30,10 @@ export const ArticleDetailHead: FC = () => {
   if (!data) return null
 
   return (
-    <Head>
+    <>
       <title>{data.title}</title>
-    </Head>
+    </>
   )
 }
+
+export default Head

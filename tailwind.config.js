@@ -3,7 +3,7 @@ const FOOTER_HEIGHT = 64
 
 module.exports = {
   content: [
-    './pages/**/*.tsx',
+    // './app/**/*.{js,ts,jsx,tsx}',
     './src/components/**/*.tsx',
     './src/features/**/*.tsx',
   ],

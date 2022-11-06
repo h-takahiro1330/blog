@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { FC } from 'react'
-import { ArticleListItem } from '~/features/articles/ArticleListItem'
+import { ArticleListItem } from '~/app/ArticleListItem'
 import axios from 'axios'
 import useSWR from 'swr'
 
@@ -12,12 +12,14 @@ const fetcher = async (url: string) => {
 }
 
 export const ArticleList: FC = () => {
+  // TODO: fetch
   const { data, error } = useSWR<Articles>(
     'https://tac.microcms.io/api/v1/articles/',
     fetcher,
     { suspense: true },
   )
 
+  // TODO: error
   if (error) {
     return <p>error</p>
   }
@@ -26,9 +28,7 @@ export const ArticleList: FC = () => {
     <article className="grid grid-cols-list gap-8 w-10/12 mx-auto max-w-7xl">
       {data.contents.map((article) => (
         <Link href={`/articles/${article.id}`} key={article.id}>
-          <a>
-            <ArticleListItem article={article} />
-          </a>
+          <ArticleListItem article={article} />
         </Link>
       ))}
     </article>

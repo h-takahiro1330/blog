@@ -1,8 +1,8 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
-import { ArticleDetailBody } from '~/features/articles/ArticleDetailBody'
+import { ArticleDetailBody } from '~/app/articles/[id]/ArticleDetailBody'
 
 export default {
-  title: 'features/articles/ArticleDetailBody',
+  title: 'app/articles/[id]/ArticleDetailBody',
   component: ArticleDetailBody,
 } as ComponentMeta<typeof ArticleDetailBody>
 

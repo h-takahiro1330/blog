@@ -1,9 +1,9 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
-import { ArticleList } from '~/features/articles/ArticleList'
+import { ArticleList } from '~/app/ArticleList'
 import { rest } from 'msw'
 
 export default {
-  title: 'features/articles/ArticleList',
+  title: 'app/ArticleList',
   component: ArticleList,
 } as ComponentMeta<typeof ArticleList>
 

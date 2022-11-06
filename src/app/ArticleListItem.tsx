@@ -14,11 +14,12 @@ export const ArticleListItem: FC<Props> = ({ article }) => (
         {article.mainVisual?.url ? (
           <Image
             className="object-cover rounded-t-lg"
-            layout="fill"
             placeholder="blur"
             blurDataURL={article.mainVisual.url}
             src={article.mainVisual.url}
             alt="記事のメインビジュアル"
+            fill
+            sizes="100vw"
           />
         ) : (
           <p className="flex items-center justify-center">Camper's Blog</p>
