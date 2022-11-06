@@ -1,26 +1,23 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
-import { ArticleDetailHead } from '~/features/articles/ArticleDetailHead'
+import { ArticleDetail } from '~/app/articles/[id]/ArticleDetail'
 import { rest } from 'msw'
 
 export default {
-  title: 'features/articles/ArticleDetailHead',
-  component: ArticleDetailHead,
-} as ComponentMeta<typeof ArticleDetailHead>
+  title: 'app/articles/[id]/ArticleDetail',
+  component: ArticleDetail,
+} as ComponentMeta<typeof ArticleDetail>
 
-const Template: ComponentStory<typeof ArticleDetailHead> = (args) => (
-  <ArticleDetailHead {...args}>sample ArticleDetailHead</ArticleDetailHead>
+const Template: ComponentStory<typeof ArticleDetail> = (args) => (
+  <ArticleDetail {...args}>sample ArticleDetail</ArticleDetail>
 )
 
 export const SuccessBehavior = Template.bind({})
 
+SuccessBehavior.args = {
+  id: 'aaa',
+}
+
 SuccessBehavior.parameters = {
-  nextRouter: {
-    path: '/articles/[id]',
-    asPath: '/articles/aaa',
-    query: {
-      id: 'aaa',
-    },
-  },
   msw: {
     handlers: [
       rest.get(

@@ -1,8 +1,8 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
-import { ArticleListItem } from '~/features/articles/ArticleListItem'
+import { ArticleListItem } from '~/app/ArticleListItem'
 
 export default {
-  title: 'features/articles/ArticleListItem',
+  title: 'app/ArticleListItem',
   component: ArticleListItem,
 } as ComponentMeta<typeof ArticleListItem>
 

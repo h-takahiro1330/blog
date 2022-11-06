@@ -1,9 +1,9 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
-import ArticlePage from '~/pages/articles/[id].page'
+import ArticlePage from '~/app/articles/[id]/page'
 import { rest } from 'msw'
 
 export default {
-  title: 'pages/articles/[id]',
+  title: 'app/articles/[id]/page',
   component: ArticlePage,
 } as ComponentMeta<typeof ArticlePage>
 
@@ -13,14 +13,13 @@ const Template: ComponentStory<typeof ArticlePage> = (args) => (
 
 export const SuccessBehavior = Template.bind({})
 
-SuccessBehavior.parameters = {
-  nextRouter: {
-    path: '/articles/[id]',
-    asPath: '/articles/aaa',
-    query: {
-      id: 'aaa',
-    },
+SuccessBehavior.args = {
+  params: {
+    id: 'aaa',
   },
+}
+
+SuccessBehavior.parameters = {
   msw: {
     handlers: [
       rest.get(

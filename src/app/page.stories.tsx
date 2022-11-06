@@ -1,9 +1,9 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react'
-import ArticlesPage from '~/pages/index.page'
+import ArticlesPage from '~/app/page'
 import { rest } from 'msw'
 
 export default {
-  title: 'pages/index',
+  title: 'app/page',
   component: ArticlesPage,
 } as ComponentMeta<typeof ArticlesPage>
 

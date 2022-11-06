@@ -1,11 +1,12 @@
+'use client'
+
 import dayjs from 'dayjs'
 import { FC } from 'react'
 import Image from 'next/image'
-import { ArticleDetailBody } from '~/features/articles/ArticleDetailBody'
+import { ArticleDetailBody } from '~/app/articles/[id]/ArticleDetailBody'
 import { Paper } from '~/components/Paper'
 import axios from 'axios'
 import useSWR from 'swr'
-import { useRouter } from 'next/router'
 
 const fetcher = async (url: string) => {
   const res = await axios.get(url, {
@@ -14,15 +15,19 @@ const fetcher = async (url: string) => {
   return res.data
 }
 
-export const ArticleDetail: FC = () => {
-  const router = useRouter()
+type Props = {
+  id: string
+}
+
+export const ArticleDetail: FC<Props> = ({ id }) => {
+  // TODO: fetch
   const { data, error } = useSWR<Article>(
-    router.query.id
-      ? `https://tac.microcms.io/api/v1/articles/${router.query.id}`
-      : null,
+    id ? `https://tac.microcms.io/api/v1/articles/${id}` : null,
     fetcher,
+    { suspense: true },
   )
 
+  // TODO: error
   if (error) {
     return <p>error</p>
   }
@@ -41,11 +46,12 @@ export const ArticleDetail: FC = () => {
             <div className="relative pt-mv-aspect-ratio">
               <Image
                 className="absolute inset-0 w-full h-full object-cover"
-                layout="fill"
                 placeholder="blur"
                 blurDataURL={data.mainVisual.url}
                 src={data.mainVisual.url}
                 alt="記事のメインビジュアル"
+                fill
+                sizes="100vw"
               />
             </div>
           )}
