@@ -2,11 +2,7 @@ const HEADER_HEIGHT = 64
 const FOOTER_HEIGHT = 64
 
 module.exports = {
-  content: [
-    // './app/**/*.{js,ts,jsx,tsx}',
-    './src/components/**/*.tsx',
-    './src/features/**/*.tsx',
-  ],
+  content: ['./src/app/**/*.{js,ts,jsx,tsx}', './src/components/**/*.tsx'],
   theme: {
     extend: {
       minHeight: {
